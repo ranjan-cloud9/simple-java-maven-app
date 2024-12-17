@@ -8,6 +8,11 @@ pipeline {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
+        stage('Test') {
+            steps {
+                // Run unit tests using Maven
+                sh 'mvn test'
+            }
         }
     }
 }
